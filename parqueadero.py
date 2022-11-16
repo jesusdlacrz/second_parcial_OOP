@@ -13,20 +13,19 @@ Tienes que mostrar cuántas plazas quedan. Hay diferentes espacios para los coch
 SUV y furgoneta. Necesitas permitir múltiples usuarios. Los usuarios deben poder registrarse y
 tener una cuenta que les permita reservar una plaza de aparcamiento para el día siguiente. 
 
-
 """
 import abc  
 class Parqueadero:
-    def __init__(self,nombre:str,puestos_van: int,puestos_SUV: int,puestos_compact: int) -> None:
-        self.nombre = nombre
+    def __init__(self,nombre_cliente:str,puestos_van: int,puestos_SUV: int,puestos_compact: int) -> None:
+        self.nombre_cliente = nombre_cliente
         self.puestos_van= puestos_van
         self.puestos_SUV= puestos_SUV
         self.puestos_compact= puestos_compact
 
-    def registro (self,nombre:str ,total_puestos: int,puestos_disp: int):
+    def registro (self,nombre_cliente:str ,total_puestos: int,puestos_disp: int):
         
         if (total_puestos>puestos_disp):
-            print (f"bienvenido {self.nombre}, has sido registrado con satisfaccion." 
+            print (f"bienvenido {self.nombre_cliente}, has sido registrado con satisfaccion." 
             "Tendras el beneficio de poder realizar una reserva para el dia siguiente.")
         else:
             raise Exception("Lo siento amigo no hay cupos disponibles, vuelva pronto :).")
