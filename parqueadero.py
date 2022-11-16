@@ -4,15 +4,33 @@
 # abstract class yes
 # exceptions yes
 # comentarios yes
-import abc
+
+"""
+Aparcamiento: Tiene un aparcamiento que sólo acepta coches durante ciertas horas. Los coches pueden
+cobrarse por minutos, horas o días. Se cobrará de forma diferente según si el coche
+es un compacto, un todoterreno o una furgoneta. Tienes que llevar un control de las plazas disponibles para admitir un coche.
+Tienes que mostrar cuántas plazas quedan. Hay diferentes espacios para los coches compactos,
+SUV y furgoneta. Necesitas permitir múltiples usuarios. Los usuarios deben poder registrarse y
+tener una cuenta que les permita reservar una plaza de aparcamiento para el día siguiente. 
+
+
+"""
+import abc  
 class Parqueadero:
-    def __init__(self,total_puestos: int, puestos_disp: int,puestos_van: int,puestos_SUV: int,puestos_compact: int) -> None:
-        
-        self.total_puestos = total_puestos
-        self.puestos_disp = puestos_disp
+    def __init__(self,nombre:str,puestos_van: int,puestos_SUV: int,puestos_compact: int) -> None:
+        self.nombre = nombre
         self.puestos_van= puestos_van
         self.puestos_SUV= puestos_SUV
         self.puestos_compact= puestos_compact
+
+    def registro (self,nombre:str ,total_puestos: int,puestos_disp: int):
+        
+        if (total_puestos>puestos_disp):
+            print (f"bienvenido {self.nombre}, has sido registrado con satisfaccion." 
+            "Tendras el beneficio de poder realizar una reserva para el dia siguiente.")
+        else:
+            raise Exception("Lo siento amigo no hay cupos disponibles, vuelva pronto :).")
+
 
     def parqueadero_van (self,puestos_van: int):
         if (self.puestos_van >= 1 ):
