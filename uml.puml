@@ -1,10 +1,12 @@
 @startuml
 class Parqueadero{
+nombre_cliente:str
 total_puestos:int
 puestos_disp: int
 puestos_van: int
 puestos_SUV: int
 puestos_compact: int
+registro (nombre_cliente,total_puestos,puestos_disp)
 parqueadero_van (puestos_van)
 parqueadero_SUV (puestos_SUV)
 parqueadero_compact (puestos_compact)
