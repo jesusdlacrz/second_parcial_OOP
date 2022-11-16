@@ -1,0 +1,25 @@
+@startuml
+class Parqueadero{
+total_puestos:int
+puestos_disp: int
+puestos_van: int
+puestos_SUV: int
+puestos_compact: int
+parqueadero_van (puestos_van)
+parqueadero_SUV (puestos_SUV)
+parqueadero_compact (puestos_compact)
+}
+class Carros{
+tipo_carro: str
+horas_parqueo = float
+hora_ent: float
+precio_final ()
+}
+Parqueadero "1"*--"*" Carros
+
+class Automoviles
+
+Carros --|> Automoviles
+
+
+@enduml
